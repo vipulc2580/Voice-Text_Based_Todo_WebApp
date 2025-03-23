@@ -1,0 +1,51 @@
+{% load static %}
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% tailwind_css %}
+    <title>{% block title %}Todo App{% endblock title %}</title>
+    <style>
+        {% block style %}{% endblock style%}
+    </style>
+</head>
+<body class="font-sans">
+    
+    <!-- Navbar -->
+    {% block nav_bar %}
+    <nav class="bg-white-700 p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo & App Name -->
+            <div class="flex items-center space-x-4">
+                <img src="{% static 'images/logo.png' %}" alt="Logo" class="h-8">
+                <div class="text-blue text-xl font-bold">TodoApp</div>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-toggle" class="text-white md:hidden">
+                ☰
+            </button>
+
+            <!-- Nav Links (Hidden on Mobile) -->
+            <div id="nav-links" class="hidden md:flex space-x-4">
+                {% block user_block %}{% endblock user_block %}
+            </div>
+        </div>
+    </nav>
+    {% endblock nav_bar %}
+
+    <!-- Main Content -->
+    <div class="container mx-auto p-6">
+        {% block content %}{% endblock content %}
+    </div>
+
+    <script>
+        document.getElementById("menu-toggle").addEventListener("click", function () {
+            document.getElementById("nav-links").classList.toggle("hidden");
+        });
+    </script>
+
+</body>
+</html>
