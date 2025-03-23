@@ -38,14 +38,14 @@ def login_user(request):
         if user:
             login(request,user)
             # return HttpResponse("<h1>You've been logged In</h1>")
-            return redirect('todo_app')
+            return redirect('dashboard')
         else:
             messages.error(request,"Invalid email or password,Please try again")
 
     return render(request,'registration/login.html',{'form':form})
 
 @login_required
-def logout(request):
+def logout_user(request):
     logout(request)
     return redirect('home')
 
