@@ -10,30 +10,42 @@
     <style>
         {% block style %}{% endblock style%}
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
 </head>
 <body class="font-sans">
     
     <!-- Navbar -->
     {% block nav_bar %}
-    <nav class="bg-white-700 p-4 shadow-lg">
-        <div class="container mx-auto flex justify-between items-center">
-            <!-- Logo & App Name -->
-            <div class="flex items-center space-x-4">
-                <img src="{% static 'images/logo.png' %}" alt="Logo" class="h-8">
-                <div class="text-blue text-xl font-bold">TodoApp</div>
-            </div>
-
-            <!-- Mobile Menu Button -->
-            <button id="menu-toggle" class="text-white md:hidden">
-                ☰
-            </button>
-
-            <!-- Nav Links (Hidden on Mobile) -->
-            <div id="nav-links" class="hidden md:flex space-x-4">
-                {% block user_block %}{% endblock user_block %}
-            </div>
+    <nav class="bg-white bg-opacity-90 backdrop-blur-lg p-4 shadow-md flex justify-between items-center fixed top-0 w-full z-50">
+        <div class="text-2xl font-bold text-blue-600 flex items-center gap-2">
+            <img src="{% static 'images/logo.png' %}" alt="Logo" class="w-8 h-8"> 
+            <span>TodoApp</span>
         </div>
+    
+        <!-- Login & Register Buttons -->
+        <div class="hidden md:flex gap-4">
+            {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}" class="px-6 py-2 bg-red-500 text-white font-semibold rounded-lg shadow-md hover:bg-red-600 transition">Logout</a>
+            {% else %}
+                <a href="{% url 'login' %}" class="px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition">Login</a>
+                <a href="{% url 'register' %}" class="px-6 py-2 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-600 transition">Register</a>
+            {% endif %}
+        </div>
+    
+        <!-- Mobile Menu Button -->
+        <button id="menu-btn" class="md:hidden text-blue-600 text-3xl">&#9776;</button>
     </nav>
+    
+    <!-- Mobile Menu (Hidden by Default) -->
+    <div id="mobile-menu" class="hidden absolute top-16 right-4 bg-white p-4 shadow-md rounded-lg z-50">
+        {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}" class="block px-4 py-2 text-red-600 hover:bg-gray-100">Logout</a>
+        {% else %}
+            <a href="{% url 'login' %}" class="block px-4 py-2 text-blue-600 hover:bg-gray-100">Login</a>
+            <a href="{% url 'register' %}" class="block px-4 py-2 text-green-600 hover:bg-gray-100">Register</a>
+        {% endif %}
+    </div>
     {% endblock nav_bar %}
 
     <!-- Main Content -->
