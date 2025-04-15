@@ -10,11 +10,11 @@ A dynamic and intuitive To-Do web application that allows users to manage tasks 
 - [Screenshots](#screenshots)
 - [Acknowledgements](#acknowledgements)
 
-## 📖 Introduction
+## Introduction
 
 The Voice & Text Based To-Do Web Application is designed to enhance productivity by allowing users to add and manage tasks using either voice commands or traditional text input. Leveraging modern web technologies, this application offers a responsive and user-friendly interface, ensuring accessibility across various devices.
 
-## ✨ Features
+## Features
 - User Authentication & Authorization  
 - Dual Input Modes: Add tasks using voice commands or text input.
 - Real-Time Voice Recognition: Utilizes the Web Speech API for accurate and immediate transcription.
@@ -22,7 +22,7 @@ The Voice & Text Based To-Do Web Application is designed to enhance productivity
 - Responsive Design: Optimized for desktops, tablets, and smartphones.
 - User-Friendly Interface: Clean and intuitive UI for seamless user experience.
 
-## 🛠️ Technologies Used
+## Technologies Used
 - **Frontend:**
   - HTML5
   - CSS3
@@ -39,7 +39,7 @@ The Voice & Text Based To-Do Web Application is designed to enhance productivity
 - **Database:**
   - SQLite (default Django database)
 
-## ⚙️ Installation & Setup
+## Installation & Setup
  ### 1. Clone the Repository:
    ```bash
         git clone https://github.com/vipulc2580/Voice-Text_Based_Todo_WebApp.git
@@ -70,7 +70,7 @@ The Voice & Text Based To-Do Web Application is designed to enhance productivity
 ### 6. Access the Application:
  Open your web browser and navigate to http://127.0.0.1:8000/
 
-## 🚀 Usage
+## Usage
 
 ### 🧑‍💼 User Journey:
   - Add Tasks: Use the text input field or click on the microphone icon to add tasks via voice.
@@ -83,11 +83,11 @@ The Voice & Text Based To-Do Web Application is designed to enhance productivity
   - Task Addition: Submit the transcribed text to add it as a new task.
   - **Note:** Ensure your browser supports the Web Speech API (e.g., Google Chrome) and that microphone permissions are granted.
 
-## 📸 Screenshots
+## Screenshots
 ![Todo Banner Home](https://github.com/vipulc2580/Voice-Text_Based_Todo_WebApp/blob/main/screenshots/homePage.png)  
 ![Todo Banner User DashBoard](https://github.com/vipulc2580/Voice-Text_Based_Todo_WebApp/blob/main/screenshots/user_dashbaord.png)
 
-## 🙏 Acknowledgements
+## Acknowledgements
 Thanks to the developers and contributors of Django, Bootstrap, and the Web Speech API.
 
 Gratitude to the open-source community for continuous support and inspiration.
